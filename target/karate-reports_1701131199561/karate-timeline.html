@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Tests\/GETdemo[1:9]","start":1701131165388,"end":1701131167719,"title":"src\/test\/java\/Tests\/GETdemo[1:9] 18:26:05.388-18:26:07.719 Test a sample Get API with full URL"},{"id":2,"group":1,"content":"src\/test\/java\/Tests\/GETdemo[2:19]","start":1701131167745,"end":1701131167997,"title":"src\/test\/java\/Tests\/GETdemo[2:19] 18:26:07.745-18:26:07.997 Test a sample Get API with a Path"},{"id":3,"group":1,"content":"src\/test\/java\/Tests\/GETdemo[3:26]","start":1701131168008,"end":1701131168225,"title":"src\/test\/java\/Tests\/GETdemo[3:26] 18:26:08.008-18:26:08.225 Test a sample Get API with a Path and parameters"},{"id":4,"group":1,"content":"src\/test\/java\/Tests\/GETdemo[4:34]","start":1701131168236,"end":1701131168763,"title":"src\/test\/java\/Tests\/GETdemo[4:34] 18:26:08.236-18:26:08.763 Test a sample Get API with assertions"},{"id":5,"group":1,"content":"src\/test\/java\/Tests\/POSTdemo[1:9]","start":1701131171260,"end":1701131171935,"title":"src\/test\/java\/Tests\/POSTdemo[1:9] 18:26:11.260-18:26:11.935 Simple post scenario"},{"id":6,"group":1,"content":"src\/test\/java\/Tests\/POSTdemo[2:16]","start":1701131171951,"end":1701131172398,"title":"src\/test\/java\/Tests\/POSTdemo[2:16] 18:26:11.951-18:26:12.398 post scenario with background"},{"id":7,"group":1,"content":"src\/test\/java\/Tests\/POSTdemo[3:23]","start":1701131172415,"end":1701131172869,"title":"src\/test\/java\/Tests\/POSTdemo[3:23] 18:26:12.415-18:26:12.869 post scenario with assertions"},{"id":8,"group":1,"content":"src\/test\/java\/Tests\/POSTdemo[4:31]","start":1701131172886,"end":1701131173335,"title":"src\/test\/java\/Tests\/POSTdemo[4:31] 18:26:12.886-18:26:13.335 post scenario with assertion from a readed file"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
