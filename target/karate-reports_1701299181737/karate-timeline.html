@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"Tests\/CONFIGdemo[1:4]","start":1701298563786,"end":1701298564440,"title":"Tests\/CONFIGdemo[1:4] 16:56:03.786-16:56:04.440 Config demo 1"},{"id":2,"group":1,"content":"Tests\/DELETEdemo[1:3]","start":1701298566233,"end":1701298568000,"title":"Tests\/DELETEdemo[1:3] 16:56:06.233-16:56:08.000 Delete API test","className":"failed"},{"id":3,"group":1,"content":"Tests\/GETdemo[1:9]","start":1701298568587,"end":1701298568973,"title":"Tests\/GETdemo[1:9] 16:56:08.587-16:56:08.973 Test a sample Get API with full URL"},{"id":4,"group":1,"content":"Tests\/GETdemo[2:19]","start":1701298568991,"end":1701298569249,"title":"Tests\/GETdemo[2:19] 16:56:08.991-16:56:09.249 Test a sample Get API with a Path","className":"failed"},{"id":5,"group":1,"content":"Tests\/GETdemo[3:26]","start":1701298569268,"end":1701298569530,"title":"Tests\/GETdemo[3:26] 16:56:09.268-16:56:09.530 Test a sample Get API with a Path and parameters"},{"id":6,"group":1,"content":"Tests\/GETdemo[4:34]","start":1701298569554,"end":1701298569912,"title":"Tests\/GETdemo[4:34] 16:56:09.554-16:56:09.912 Test a sample Get API with assertions"},{"id":7,"group":1,"content":"Tests\/GETdemo[5:45]","start":1701298569986,"end":1701298570247,"title":"Tests\/GETdemo[5:45] 16:56:09.986-16:56:10.247 get a single user info"},{"id":8,"group":1,"content":"Tests\/GETdemo[6:52]","start":1701298570279,"end":1701298570507,"title":"Tests\/GETdemo[6:52] 16:56:10.279-16:56:10.507 get a list of resources","className":"failed"},{"id":9,"group":1,"content":"Tests\/POSTdemo[1:10]","start":1701298572439,"end":1701298572878,"title":"Tests\/POSTdemo[1:10] 16:56:12.439-16:56:12.878 Simple post scenario","className":"failed"},{"id":10,"group":1,"content":"Tests\/POSTdemo[2:18]","start":1701298572889,"end":1701298573085,"title":"Tests\/POSTdemo[2:18] 16:56:12.889-16:56:13.085 post scenario with background","className":"failed"},{"id":11,"group":1,"content":"Tests\/POSTdemo[3:26]","start":1701298573112,"end":1701298573399,"title":"Tests\/POSTdemo[3:26] 16:56:13.112-16:56:13.399 post scenario with assertions","className":"failed"},{"id":12,"group":1,"content":"Tests\/POSTdemo[4:35]","start":1701298573414,"end":1701298573933,"title":"Tests\/POSTdemo[4:35] 16:56:13.414-16:56:13.933 post scenario with assertion from a readed file","className":"failed"},{"id":13,"group":1,"content":"Tests\/POSTdemo[5:44]","start":1701298573954,"end":1701298574191,"title":"Tests\/POSTdemo[5:44] 16:56:13.954-16:56:14.191 post scenario reading body data from file and relative Path","className":"failed"},{"id":14,"group":1,"content":"Tests\/POSTdemo[6:57]","start":1701298574227,"end":1701298574491,"title":"Tests\/POSTdemo[6:57] 16:56:14.227-16:56:14.491 post reading body data from file and modifying request values","className":"failed"},{"id":15,"group":1,"content":"Tests\/POSTdemo[7:67]","start":1701298574519,"end":1701298574747,"title":"Tests\/POSTdemo[7:67] 16:56:14.519-16:56:14.747 post to sign up a user","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -41,3 +41,16 @@ Feature: Sample api Test
 		And assert response.data.length == 6
 		And match $.data[1].id == 8
 		And match $.data[3].last_name == 'Fields'
+		
+	Scenario: get a single user info
+		Given def userNumber = '/2'
+		Given path '/users'+userNumber
+		When method GET
+		Then status 200
+		And print response	
+	
+	Scenario: get a list of resources
+		Given path '/unknown/2'
+		When method GET
+		Then status 200
+		And print response	

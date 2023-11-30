@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: Tests.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 20.90 s <<< FAILURE! -- in Tests.TestRunner
+[Tests/CONFIGdemo] config file demo.[2:10] get config 2 -- Time elapsed: 2.382 s <<< ERROR!
+com.intuit.karate.KarateException: 
+status code was: 404, expected: 200, response time in milliseconds: 973, url: https://reqres.in/api/default/users%3Fpage=2, response: 
+{}
+classpath:Tests/CONFIGdemo.feature:13
+	at <feature>.: Then status 200 (classpath:Tests/CONFIGdemo.feature:13:13)
+

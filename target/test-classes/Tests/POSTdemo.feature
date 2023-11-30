@@ -64,5 +64,11 @@ Feature: Post API demo
 		Then status 201
 	  And print response   
 	
+	Scenario: post to sign up a user
+		Given path '/users'
+	  And request {   "email": "test@mail.com"		}
+		When method POST
+		Then status 201
+	  And print response   
 	  
 		
